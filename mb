@@ -1,0 +1,16 @@
+#!/bin/bash
+clear
+echo "Informe seu Token:"
+read TOKEN
+echo "Informe seu número:"
+read NUMERO
+echo "Quantas vezes?"
+read VEZES
+for i in $(seq $VEZES);
+do
+echo "CONTAGEM: $i"
+data=$"msisdn=55$NUMERO&campid=$TOKEN&opCode=VV" && site=$"http://interatividade.vivo.ddivulga.com/carrotProcess" && curl "${site}" -d "${data}"
+echo ""
+done
+echo "PROGRAMA FINALIZADO"
+echo "PARA INICIAR NOVAMENTE DIGITEI: ./mb"
